@@ -1,0 +1,455 @@
+/* ===== Reset & base ===== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --eg-brown: #6d4c39;
+  --eg-brown-dark: #4e3628;
+  --eg-brown-light: #8d6655;
+  --eg-accent: #ef4444;
+  --bg: #f2f3f5;
+  --surface: #ffffff;
+  --surface2: #f8f8f8;
+  --border: #e2e2e2;
+  --text: #1a1a1a;
+  --text-muted: #6b7280;
+  --status-gitt: #d97706;
+  --status-godskjent: #2563eb;
+  --status-bestilt: #16a34a;
+  --radius: 6px;
+  --shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 14px;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+/* ===== Header ===== */
+header {
+  background: var(--eg-brown);
+  color: white;
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 52px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+header h1 {
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+header .header-right {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* ===== Nav tabs ===== */
+nav {
+  background: var(--eg-brown-dark);
+  display: flex;
+  padding: 0 1.5rem;
+  gap: 2px;
+}
+
+nav button {
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.7);
+  padding: 0.6rem 1rem;
+  cursor: pointer;
+  font-size: 13px;
+  border-bottom: 2px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+  white-space: nowrap;
+}
+
+nav button:hover { color: white; }
+nav button.active {
+  color: white;
+  border-bottom-color: #ef4444;
+  font-weight: 500;
+}
+
+/* ===== Main layout ===== */
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+.view { display: none; }
+.view.active { display: block; }
+
+/* ===== Cards ===== */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  box-shadow: var(--shadow);
+}
+
+.card + .card { margin-top: 1rem; }
+.card-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 1rem;
+}
+
+/* ===== Grid helpers ===== */
+.row { display: flex; gap: 1rem; align-items: flex-start; }
+.row-center { align-items: center; }
+.col { flex: 1; }
+.col-auto { flex: 0 0 auto; }
+
+/* ===== Form elements ===== */
+label {
+  display: block;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+
+input[type="text"],
+input[type="number"],
+select,
+textarea {
+  width: 100%;
+  padding: 0.4rem 0.6rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font-size: 14px;
+  font-family: inherit;
+  background: var(--surface);
+  color: var(--text);
+  transition: border-color 0.15s;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--eg-brown);
+}
+
+input.inline {
+  width: auto;
+  min-width: 80px;
+}
+
+/* ===== Buttons ===== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.4rem 0.85rem;
+  border: none;
+  border-radius: var(--radius);
+  font-size: 13px;
+  font-family: inherit;
+  cursor: pointer;
+  transition: opacity 0.15s, background 0.15s;
+  white-space: nowrap;
+}
+
+.btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.btn-primary { background: var(--eg-brown); color: white; }
+.btn-primary:hover:not(:disabled) { background: var(--eg-brown-dark); }
+.btn-danger { background: var(--eg-accent); color: white; }
+.btn-danger:hover:not(:disabled) { background: #dc2626; }
+.btn-secondary { background: var(--surface2); color: var(--text); border: 1px solid var(--border); }
+.btn-secondary:hover:not(:disabled) { background: var(--border); }
+.btn-ghost { background: none; color: var(--text-muted); }
+.btn-ghost:hover:not(:disabled) { color: var(--text); background: var(--surface2); }
+.btn-sm { padding: 0.25rem 0.6rem; font-size: 12px; }
+.btn-icon { padding: 0.35rem; }
+
+/* ===== Tables ===== */
+table { width: 100%; border-collapse: collapse; }
+th, td { padding: 0.5rem 0.75rem; text-align: left; border-bottom: 1px solid var(--border); }
+th { font-size: 12px; font-weight: 600; color: var(--text-muted); background: var(--surface2); }
+tr:last-child td { border-bottom: none; }
+tr:hover td { background: #fafafa; }
+
+/* ===== Status badges ===== */
+.badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  user-select: none;
+}
+
+.badge-gitt { background: #fef3c7; color: var(--status-gitt); }
+.badge-godskjent { background: #dbeafe; color: var(--status-godskjent); }
+.badge-bestilt { background: #dcfce7; color: var(--status-bestilt); }
+
+/* ===== Handlekurv view ===== */
+.cart-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.product-browser {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.category-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  padding: 0.75rem;
+  background: var(--surface2);
+  border-bottom: 1px solid var(--border);
+}
+
+.cat-btn {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 3px 10px;
+  font-size: 12px;
+  cursor: pointer;
+  color: var(--text-muted);
+  transition: all 0.15s;
+}
+
+.cat-btn:hover, .cat-btn.active {
+  background: var(--eg-brown);
+  color: white;
+  border-color: var(--eg-brown);
+}
+
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 6px;
+  padding: 0.75rem;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.product-chip {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.4rem 0.6rem;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.15s;
+  background: var(--surface);
+}
+
+.product-chip:hover {
+  background: var(--eg-brown);
+  color: white;
+  border-color: var(--eg-brown);
+}
+
+/* Cart table */
+.cart-table input[type="number"] {
+  width: 60px;
+  text-align: right;
+}
+
+.cart-table .price-input {
+  width: 90px;
+  text-align: right;
+}
+
+.price-overridden { color: var(--eg-accent); }
+.price-customer { color: var(--status-bestilt); }
+
+.cart-totals {
+  display: flex;
+  justify-content: flex-end;
+  gap: 2rem;
+  padding: 0.75rem 0;
+  border-top: 2px solid var(--border);
+  font-weight: 600;
+}
+
+.cart-totals .label { color: var(--text-muted); font-weight: 400; }
+
+.cart-actions { display: flex; gap: 0.5rem; justify-content: flex-end; margin-top: 1rem; }
+
+/* ===== Oversikt view ===== */
+.status-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.status-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+  z-index: 200;
+  min-width: 160px;
+  padding: 4px;
+}
+
+.status-menu.open { display: block; }
+
+.status-menu button {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  padding: 0.4rem 0.6rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.status-menu button:hover { background: var(--surface2); }
+
+.order-detail { display: none; background: var(--surface2); }
+.order-detail.open { display: table-row-group; }
+.order-detail td { padding: 0.5rem 0.75rem 0.75rem 2rem; font-size: 13px; color: var(--text-muted); }
+
+/* ===== Produkter / Priser / Kunder views ===== */
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.category-group + .category-group { margin-top: 1.5rem; }
+.category-group h3 {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.5rem;
+}
+
+/* Inline edit */
+.editable { cursor: pointer; border-bottom: 1px dashed var(--border); }
+.editable:hover { border-bottom-color: var(--eg-brown); }
+
+/* ===== Innstillinger modal ===== */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  z-index: 300;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-overlay.open { display: flex; }
+
+.modal {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  width: 480px;
+  max-width: 95vw;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+}
+
+.modal-header h2 { font-size: 1rem; font-weight: 600; }
+.modal-footer { display: flex; justify-content: flex-end; gap: 0.5rem; margin-top: 1.25rem; }
+
+.setting-group + .setting-group { margin-top: 1rem; }
+.setting-group label { margin-bottom: 4px; }
+.setting-row { display: flex; gap: 0.5rem; align-items: flex-end; }
+.setting-row input { flex: 1; }
+
+/* ===== Toast ===== */
+#toast {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  background: #1a1a1a;
+  color: white;
+  padding: 0.6rem 1rem;
+  border-radius: var(--radius);
+  font-size: 13px;
+  opacity: 0;
+  transition: opacity 0.2s;
+  pointer-events: none;
+  z-index: 500;
+  max-width: 320px;
+}
+
+#toast.show { opacity: 1; }
+#toast.error { background: var(--eg-accent); }
+#toast.success { background: var(--status-bestilt); }
+
+/* ===== Copy modal ===== */
+#copy-modal textarea {
+  font-family: 'Consolas', 'Monaco', monospace;
+  font-size: 12px;
+  height: 200px;
+  resize: vertical;
+}
+
+/* ===== Spinner ===== */
+.spinner {
+  width: 14px; height: 14px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+  display: inline-block;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ===== Misc ===== */
+.empty-state {
+  text-align: center;
+  color: var(--text-muted);
+  padding: 2rem;
+  font-size: 13px;
+}
+
+.text-right { text-align: right; }
+.text-muted { color: var(--text-muted); }
+.mt1 { margin-top: 0.5rem; }
+.mt2 { margin-top: 1rem; }
+.gap { gap: 0.5rem; }
+
+@media (max-width: 700px) {
+  .cart-header { grid-template-columns: 1fr; }
+  main { padding: 1rem 0.75rem; }
+  nav { padding: 0 0.75rem; }
+  nav button { padding: 0.5rem 0.6rem; font-size: 12px; }
+}

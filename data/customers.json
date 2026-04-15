@@ -1,0 +1,28 @@
+{
+  "chains": {
+    "XL-Bygg": {
+      "stores": [],
+      "prices": {}
+    },
+    "Byggtorget": {
+      "stores": ["Lofoten"],
+      "prices": {}
+    },
+    "Optimera": {
+      "stores": [],
+      "prices": {}
+    },
+    "AS Drift": {
+      "stores": [],
+      "prices": {}
+    },
+    "Stangeskovene": {
+      "stores": [],
+      "prices": {}
+    },
+    "Byggmakker": {
+      "stores": [],
+      "prices": {}
+    }
+  }
+}

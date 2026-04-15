@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tilbudsapp — EG R&amp;SC</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>Tilbudsapp</h1>
+  <div class="header-right">
+    <button class="btn btn-ghost" id="btn-settings" title="Innstillinger" style="color:white;font-size:18px">⚙</button>
+  </div>
+</header>
+
+<nav>
+  <button data-view="handlekurv" class="active">Handlekurv</button>
+  <button data-view="oversikt">Oversikt</button>
+  <button data-view="produkter">Produkter</button>
+  <button data-view="kunder">Kunder</button>
+  <button data-view="priser">Priser</button>
+</nav>
+
+<main>
+
+  <!-- ════════════════════════════════════════════════════
+       HANDLEKURV
+  ═══════════════════════════════════════════════════════ -->
+  <div id="view-handlekurv" class="view active">
+
+    <!-- Kunde + saksnummer -->
+    <div class="card" style="margin-bottom:1rem">
+      <div class="cart-header">
+        <div>
+          <label for="cart-chain">Kjede</label>
+          <select id="cart-chain"></select>
+        </div>
+        <div id="cart-store-wrap" style="display:none">
+          <label for="cart-store">Butikk</label>
+          <select id="cart-store"></select>
+        </div>
+        <div>
+          <label for="cart-id">Saksnummer</label>
+          <input type="text" id="cart-id" placeholder="CS-0009123" style="width:160px">
+        </div>
+      </div>
+    </div>
+
+    <!-- Produktvelger -->
+    <div class="card" style="margin-bottom:1rem">
+      <div class="card-title">Produkter</div>
+      <div class="product-browser">
+        <div class="category-tabs" id="category-tabs"></div>
+        <div class="product-list" id="product-list"></div>
+      </div>
+    </div>
+
+    <!-- Handlekurv -->
+    <div class="card">
+      <div class="card-title">Handlekurv</div>
+      <table class="cart-table">
+        <thead>
+          <tr>
+            <th>Vare</th>
+            <th style="width:80px">Antall</th>
+            <th style="width:110px">Kundepris</th>
+            <th style="width:90px">Innpris</th>
+            <th style="width:100px" class="text-right">Total</th>
+            <th style="width:40px"></th>
+          </tr>
+        </thead>
+        <tbody id="cart-tbody"></tbody>
+      </table>
+
+      <div class="cart-totals">
+        <span><span class="label">Margin: </span><span id="cart-margin">–</span></span>
+        <span><span class="label">Total eks. mva: </span><strong id="cart-total">0,-</strong></span>
+      </div>
+
+      <div class="cart-actions">
+        <button class="btn btn-secondary" id="btn-nullstill">Nullstill</button>
+        <button class="btn btn-secondary" id="btn-kopier" disabled>Kopier kundemelding</button>
+        <button class="btn btn-primary" id="btn-publiser" disabled>Publiser til Confluence</button>
+      </div>
+    </div>
+
+  </div><!-- /handlekurv -->
+
+
+  <!-- ════════════════════════════════════════════════════
+       OVERSIKT
+  ═══════════════════════════════════════════════════════ -->
+  <div id="view-oversikt" class="view">
+    <div class="card">
+      <div class="card-title">Alle tilbud</div>
+      <table>
+        <thead>
+          <tr>
+            <th>Saksnummer</th>
+            <th>Kunde</th>
+            <th>Dato</th>
+            <th class="text-right">Total</th>
+            <th>Status</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="oversikt-tbody"></tbody>
+      </table>
+    </div>
+  </div>
+
+
+  <!-- ════════════════════════════════════════════════════
+       PRODUKTER
+  ═══════════════════════════════════════════════════════ -->
+  <div id="view-produkter" class="view">
+    <div class="section-header">
+      <h2 style="font-size:1rem;font-weight:600">Produktkatalog</h2>
+    </div>
+    <div id="produkter-content"></div>
+  </div>
+
+
+  <!-- ════════════════════════════════════════════════════
+       KUNDER
+  ═══════════════════════════════════════════════════════ -->
+  <div id="view-kunder" class="view">
+    <div class="section-header" style="margin-bottom:1rem">
+      <h2 style="font-size:1rem;font-weight:600">Kjeder og kunder</h2>
+      <button class="btn btn-primary btn-sm" id="btn-add-chain">+ Ny kjede</button>
+    </div>
+    <div id="kunder-content"></div>
+  </div>
+
+
+  <!-- ════════════════════════════════════════════════════
+       PRISER
+  ═══════════════════════════════════════════════════════ -->
+  <div id="view-priser" class="view">
+    <div class="card">
+      <div class="card-title">Standardpriser</div>
+      <table>
+        <thead>
+          <tr>
+            <th>Produktnavn</th>
+            <th style="width:120px">Kundepris</th>
+            <th style="width:130px">Varenummer</th>
+          </tr>
+        </thead>
+        <tbody id="priser-tbody"></tbody>
+      </table>
+    </div>
+  </div>
+
+</main><!-- /main -->
+
+
+<!-- ════════════════════════════════════════════════════
+     SETTINGS MODAL
+═══════════════════════════════════════════════════════ -->
+<div class="modal-overlay" id="settings-modal">
+  <div class="modal">
+    <div class="modal-header">
+      <h2>Innstillinger</h2>
+      <button class="btn btn-ghost btn-icon" id="btn-close-settings">✕</button>
+    </div>
+
+    <p style="font-size:12px;color:var(--text-muted);margin-bottom:1rem">
+      Tokens lagres kun i nettleserens localStorage — aldri sendt noe annet sted.
+    </p>
+
+    <div style="font-weight:600;margin-bottom:0.5rem;font-size:13px">GitHub</div>
+    <div class="setting-group">
+      <label>Repo (f.eks. peels-eg/quote-app)</label>
+      <div class="setting-row">
+        <input type="text" id="set-gh-repo" placeholder="eier/repo-navn">
+        <button class="btn btn-secondary btn-sm" id="btn-test-gh">Test</button>
+      </div>
+    </div>
+    <div class="setting-group">
+      <label>Personal Access Token (repo scope)</label>
+      <input type="password" id="set-gh-token" placeholder="ghp_...">
+    </div>
+
+    <div style="font-weight:600;margin:1rem 0 0.5rem;font-size:13px">Confluence</div>
+    <div class="setting-group">
+      <label>Base URL</label>
+      <div class="setting-row">
+        <input type="text" id="set-cf-url" placeholder="https://confluence.eg.dk">
+        <button class="btn btn-secondary btn-sm" id="btn-test-cf">Test</button>
+      </div>
+    </div>
+    <div class="setting-group">
+      <label>Personal Access Token</label>
+      <input type="password" id="set-cf-token" placeholder="token...">
+    </div>
+    <div class="setting-group">
+      <label>Space Key</label>
+      <input type="text" id="set-cf-space" placeholder="~peels@eg.no">
+    </div>
+
+    <div class="modal-footer">
+      <button class="btn btn-secondary" id="btn-close-settings2" onclick="document.getElementById('settings-modal').classList.remove('open')">Avbryt</button>
+      <button class="btn btn-primary" id="btn-save-settings">Lagre</button>
+    </div>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════════════════════
+     COPY HTML FALLBACK MODAL
+═══════════════════════════════════════════════════════ -->
+<div class="modal-overlay" id="copy-modal">
+  <div class="modal">
+    <div class="modal-header">
+      <h2>Confluence HTML — kopier manuelt</h2>
+      <button class="btn btn-ghost btn-icon" id="btn-close-copy">✕</button>
+    </div>
+    <p style="font-size:12px;color:var(--text-muted);margin-bottom:0.75rem">
+      Direkte Confluence-publisering blokkeres av CORS. Kopier HTML-en nedenfor og lim inn i Confluence-editoren (velg «Insert» → «Markup»).
+    </p>
+    <textarea id="copy-html-content" readonly></textarea>
+    <div class="modal-footer">
+      <button class="btn btn-secondary" id="btn-close-copy2" onclick="document.getElementById('copy-modal').classList.remove('open')">Lukk</button>
+      <button class="btn btn-primary" id="btn-copy-html">Kopier HTML</button>
+    </div>
+  </div>
+</div>
+
+
+<!-- Toast -->
+<div id="toast"></div>
+
+<script src="github.js"></script>
+<script src="confluence.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
