@@ -1,8 +1,4 @@
 {
-  "CT45": {
-    "kundepris": 14900,
-    "varenummer": null
-  },
   "CT60": {
     "kundepris": 12900,
     "varenummer": null
@@ -35,7 +31,7 @@
     "kundepris": 690,
     "varenummer": null
   },
-  "BÃ¦reveske": {
+  "BÃÂ¦reveske": {
     "kundepris": 690,
     "varenummer": null
   },
@@ -131,11 +127,11 @@
     "kundepris": 245,
     "varenummer": "879-EA-1"
   },
-  "FargebÃ¥nd resin": {
+  "FargebÃÂ¥nd resin": {
     "kundepris": 1320,
     "varenummer": null
   },
-  "FargebÃ¥nd Wax/Resin": {
+  "FargebÃÂ¥nd Wax/Resin": {
     "kundepris": 690,
     "varenummer": null
   },
@@ -171,7 +167,7 @@
     "kundepris": 499,
     "varenummer": null
   },
-  "StrÃ¸mforsyning PP-9715": {
+  "StrÃÂ¸mforsyning PP-9715": {
     "kundepris": 1049,
     "varenummer": null
   },
@@ -185,6 +181,10 @@
   },
   "M.2 disk m/image": {
     "kundepris": null,
+    "varenummer": null
+  },
+  "CT452": {
+    "kundepris": 14900,
     "varenummer": null
   }
 }
