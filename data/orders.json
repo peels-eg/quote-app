@@ -1,3 +1,32 @@
 {
-  "orders": []
+  "orders": [
+    {
+      "id": "CS2498207",
+      "date": "2026-04-15",
+      "chain": "Byggtorget",
+      "store": "Stryn",
+      "status": "Gitt tilbud",
+      "items": [
+        {
+          "name": "Honeywell PC42E",
+          "qty": 1,
+          "unitPrice": 4800,
+          "innpris": null,
+          "category": "Printer",
+          "isSetup": false
+        },
+        {
+          "name": "Oppsettspris",
+          "qty": 1,
+          "unitPrice": 1490,
+          "innpris": null,
+          "category": "Printer",
+          "isSetup": true
+        }
+      ],
+      "total": 6290,
+      "margin": null,
+      "confluenceSynced": true
+    }
+  ]
 }
