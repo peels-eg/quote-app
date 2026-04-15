@@ -1,7 +1,6 @@
 {
   "PDA": [
     "CT45",
-    "CT60",
     "CT30",
     "CT30XP",
     "Batteri CT45",
@@ -9,7 +8,7 @@
     "Stylus Penn CT45",
     "Holster CT45",
     "Holster CT60",
-    "Bæreveske",
+    "BÃ¦reveske",
     "4dock lader CT45",
     "4dock lader CT60",
     "Singeldock CT45",
@@ -40,8 +39,8 @@
     "Hylleetiketter",
     "Postetikett B25",
     "Reoletiketter",
-    "Fargebånd resin",
-    "Fargebånd Wax/Resin"
+    "FargebÃ¥nd resin",
+    "FargebÃ¥nd Wax/Resin"
   ],
   "Periferi": [
     "Signotec m/baklys",
@@ -54,7 +53,7 @@
     "Skjermbeskytter Signotec"
   ],
   "Strom": [
-    "Strømforsyning PP-9715",
+    "StrÃ¸mforsyning PP-9715",
     "Lenovo Universal USB-C dock",
     "Lenovo Thunderbolt 4 dock",
     "M.2 disk m/image"
