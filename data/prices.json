@@ -175,5 +175,9 @@
   "CT45": {
     "kundepris": 14900,
     "varenummer": null
+  },
+  "TEST ENHET": {
+    "kundepris": 1000000000,
+    "varenummer": null
   }
 }
