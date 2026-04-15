@@ -1,6 +1,58 @@
 {
   "orders": [
     {
+      "id": "CS2701095",
+      "date": "2026-04-15",
+      "chain": "XL-Bygg",
+      "store": "Lade",
+      "status": "Gitt tilbud",
+      "items": [
+        {
+          "name": "CT45",
+          "qty": 4,
+          "unitPrice": 14900,
+          "innpris": 10617,
+          "category": "PDA",
+          "isSetup": false
+        },
+        {
+          "name": "4dock lader CT45",
+          "qty": 1,
+          "unitPrice": 4800,
+          "innpris": 3376,
+          "category": "PDA",
+          "isSetup": false
+        },
+        {
+          "name": "CT45 Edge Service 3 year",
+          "qty": 4,
+          "unitPrice": 1990,
+          "innpris": 1552,
+          "category": "PDA",
+          "isSetup": false
+        },
+        {
+          "name": "Stylus Penn CT45",
+          "qty": 4,
+          "unitPrice": 190,
+          "innpris": 122,
+          "category": "PDA",
+          "isSetup": false
+        },
+        {
+          "name": "Oppsettspris",
+          "qty": 4,
+          "unitPrice": 1800,
+          "innpris": null,
+          "category": "PDA",
+          "isSetup": true
+        }
+      ],
+      "total": 80320,
+      "margin": 20580,
+      "confluenceSynced": true
+    },
+    {
       "id": "CS2498207",
       "date": "2026-04-15",
       "chain": "Byggtorget",
