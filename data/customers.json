@@ -5,7 +5,10 @@
       "prices": {}
     },
     "Byggtorget": {
-      "stores": ["Lofoten"],
+      "stores": [
+        "Lofoten",
+        "Stryn"
+      ],
       "prices": {}
     },
     "Optimera": {
