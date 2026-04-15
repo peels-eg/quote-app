@@ -21,7 +21,8 @@
   },
   "Stylus Penn CT45": {
     "kundepris": 190,
-    "varenummer": null
+    "varenummer": null,
+    "innpris": 122
   },
   "Holster CT45": {
     "kundepris": 690,
@@ -31,7 +32,7 @@
     "kundepris": 690,
     "varenummer": null
   },
-  "BÃÂ¦reveske": {
+  "BÃÂÃÂ¦reveske": {
     "kundepris": 690,
     "varenummer": null
   },
@@ -119,11 +120,11 @@
     "kundepris": 245,
     "varenummer": "879-EA-1"
   },
-  "FargebÃÂ¥nd resin": {
+  "FargebÃÂÃÂ¥nd resin": {
     "kundepris": 1320,
     "varenummer": null
   },
-  "FargebÃÂ¥nd Wax/Resin": {
+  "FargebÃÂÃÂ¥nd Wax/Resin": {
     "kundepris": 690,
     "varenummer": null
   },
@@ -159,7 +160,7 @@
     "kundepris": 499,
     "varenummer": null
   },
-  "StrÃÂ¸mforsyning PP-9715": {
+  "StrÃÂÃÂ¸mforsyning PP-9715": {
     "kundepris": 1049,
     "varenummer": null
   },
