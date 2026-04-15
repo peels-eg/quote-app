@@ -1,50 +1,190 @@
 {
-  "CT45": { "kundepris": 14900, "varenummer": null },
-  "CT60": { "kundepris": 12900, "varenummer": null },
-  "CT30": { "kundepris": 12900, "varenummer": null },
-  "CT30XP": { "kundepris": 12900, "varenummer": null },
-  "Batteri CT45": { "kundepris": 990, "varenummer": null },
-  "Batteri CT60": { "kundepris": 1040, "varenummer": null },
-  "Stylus Penn CT45": { "kundepris": 190, "varenummer": null },
-  "Holster CT45": { "kundepris": 690, "varenummer": null },
-  "Holster CT60": { "kundepris": 690, "varenummer": null },
-  "Bæreveske": { "kundepris": 690, "varenummer": null },
-  "4dock lader CT45": { "kundepris": 4800, "varenummer": null },
-  "4dock lader CT60": { "kundepris": 4200, "varenummer": null },
-  "Singeldock CT45": { "kundepris": 2995, "varenummer": null },
-  "Singellader": { "kundepris": 2995, "varenummer": null },
-  "Protective Boot CT45": { "kundepris": 360, "varenummer": null },
-  "Pistolgrep CT60": { "kundepris": 1790, "varenummer": null },
-  "NY Fec, Win11, uten periferi": { "kundepris": 19819, "varenummer": null },
-  "NY Fec, Win11 inkl. periferi": { "kundepris": 26832, "varenummer": null },
-  "NY Fec, Win11 inkl. periferi, u/signotec": { "kundepris": 23832, "varenummer": null },
-  "FEC m/integrert display": { "kundepris": 23290, "varenummer": null },
-  "FEC m/integrert kundedisplay": { "kundepris": 23290, "varenummer": null },
-  "FEC m/ekstern kundedisplay": { "kundepris": 22790, "varenummer": null },
-  "Fec u/kundedisplay": { "kundepris": null, "varenummer": null },
-  "PC42E": { "kundepris": 4800, "varenummer": null },
-  "Honeywell PC42E": { "kundepris": 4800, "varenummer": null },
-  "HP LaserJet Pro 4002dn": { "kundepris": 1990, "varenummer": null },
-  "HP Color LaserJet Pro MFP 4302dw": { "kundepris": 4750, "varenummer": null },
-  "Bongskriver": { "kundepris": 1990, "varenummer": null },
-  "Kvitteringsskriver": { "kundepris": null, "varenummer": null },
-  "Gule kollietiketter": { "kundepris": 219, "varenummer": null },
-  "Hvite kollietiketter": { "kundepris": 165, "varenummer": null },
-  "Hylleetiketter": { "kundepris": 167, "varenummer": "6777-AA-1" },
-  "Postetikett B25": { "kundepris": 167, "varenummer": null },
-  "Reoletiketter": { "kundepris": 245, "varenummer": "879-EA-1" },
-  "Fargebånd resin": { "kundepris": 1320, "varenummer": null },
-  "Fargebånd Wax/Resin": { "kundepris": 690, "varenummer": null },
-  "Signotec m/baklys": { "kundepris": 3600, "varenummer": null },
-  "Signotec u/baklys": { "kundepris": 2850, "varenummer": null },
-  "Quickscan": { "kundepris": 2990, "varenummer": null },
-  "Integrert display": { "kundepris": null, "varenummer": null },
-  "Integrert kundedisplay": { "kundepris": null, "varenummer": null },
-  "Logitech MK540": { "kundepris": null, "varenummer": null },
-  "DS2208 / Zebra strekkodeleser": { "kundepris": 1499, "varenummer": null },
-  "Skjermbeskytter Signotec": { "kundepris": 499, "varenummer": null },
-  "Strømforsyning PP-9715": { "kundepris": 1049, "varenummer": null },
-  "Lenovo Universal USB-C dock": { "kundepris": 2390, "varenummer": null },
-  "Lenovo Thunderbolt 4 dock": { "kundepris": 3190, "varenummer": null },
-  "M.2 disk m/image": { "kundepris": null, "varenummer": null }
+  "CT45": {
+    "kundepris": 14900,
+    "varenummer": null
+  },
+  "CT60": {
+    "kundepris": 12900,
+    "varenummer": null
+  },
+  "CT30": {
+    "kundepris": 12900,
+    "varenummer": null
+  },
+  "CT30XP": {
+    "kundepris": 12900,
+    "varenummer": null
+  },
+  "Batteri CT45": {
+    "kundepris": 990,
+    "varenummer": null
+  },
+  "Batteri CT60": {
+    "kundepris": 1040,
+    "varenummer": null
+  },
+  "Stylus Penn CT45": {
+    "kundepris": 190,
+    "varenummer": null
+  },
+  "Holster CT45": {
+    "kundepris": 690,
+    "varenummer": null
+  },
+  "Holster CT60": {
+    "kundepris": 690,
+    "varenummer": null
+  },
+  "BÃ¦reveske": {
+    "kundepris": 690,
+    "varenummer": null
+  },
+  "4dock lader CT45": {
+    "kundepris": 4800,
+    "varenummer": null
+  },
+  "4dock lader CT60": {
+    "kundepris": 4200,
+    "varenummer": null
+  },
+  "Singeldock CT45": {
+    "kundepris": 2995,
+    "varenummer": null
+  },
+  "Singellader": {
+    "kundepris": 2995,
+    "varenummer": null
+  },
+  "Protective Boot CT45": {
+    "kundepris": 360,
+    "varenummer": null
+  },
+  "Pistolgrep CT60": {
+    "kundepris": 1790,
+    "varenummer": null
+  },
+  "NY Fec, Win11, uten periferi": {
+    "kundepris": 19819,
+    "varenummer": null
+  },
+  "NY Fec, Win11 inkl. periferi": {
+    "kundepris": 26832,
+    "varenummer": null
+  },
+  "NY Fec, Win11 inkl. periferi, u/signotec": {
+    "kundepris": 23832,
+    "varenummer": null
+  },
+  "FEC m/integrert display": {
+    "kundepris": 23290,
+    "varenummer": null
+  },
+  "FEC m/integrert kundedisplay": {
+    "kundepris": 23290,
+    "varenummer": null
+  },
+  "FEC m/ekstern kundedisplay": {
+    "kundepris": 22790,
+    "varenummer": null
+  },
+  "Fec u/kundedisplay": {
+    "kundepris": null,
+    "varenummer": null
+  },
+  "PC42E": {
+    "kundepris": 4800,
+    "varenummer": null
+  },
+  "Honeywell PC42E": {
+    "kundepris": 4800,
+    "varenummer": null
+  },
+  "HP LaserJet Pro 4002dn": {
+    "kundepris": 1990,
+    "varenummer": null
+  },
+  "HP Color LaserJet Pro MFP 4302dw": {
+    "kundepris": 4750,
+    "varenummer": null
+  },
+  "Bongskriver": {
+    "kundepris": 1990,
+    "varenummer": null
+  },
+  "Gule kollietiketter": {
+    "kundepris": 219,
+    "varenummer": null
+  },
+  "Hvite kollietiketter": {
+    "kundepris": 165,
+    "varenummer": null
+  },
+  "Hylleetiketter": {
+    "kundepris": 167,
+    "varenummer": "6777-AA-1"
+  },
+  "Postetikett B25": {
+    "kundepris": 167,
+    "varenummer": null
+  },
+  "Reoletiketter": {
+    "kundepris": 245,
+    "varenummer": "879-EA-1"
+  },
+  "FargebÃ¥nd resin": {
+    "kundepris": 1320,
+    "varenummer": null
+  },
+  "FargebÃ¥nd Wax/Resin": {
+    "kundepris": 690,
+    "varenummer": null
+  },
+  "Signotec m/baklys": {
+    "kundepris": 3600,
+    "varenummer": null
+  },
+  "Signotec u/baklys": {
+    "kundepris": 2850,
+    "varenummer": null
+  },
+  "Quickscan": {
+    "kundepris": 2990,
+    "varenummer": null
+  },
+  "Integrert display": {
+    "kundepris": null,
+    "varenummer": null
+  },
+  "Integrert kundedisplay": {
+    "kundepris": null,
+    "varenummer": null
+  },
+  "Logitech MK540": {
+    "kundepris": null,
+    "varenummer": null
+  },
+  "DS2208 / Zebra strekkodeleser": {
+    "kundepris": 1499,
+    "varenummer": null
+  },
+  "Skjermbeskytter Signotec": {
+    "kundepris": 499,
+    "varenummer": null
+  },
+  "StrÃ¸mforsyning PP-9715": {
+    "kundepris": 1049,
+    "varenummer": null
+  },
+  "Lenovo Universal USB-C dock": {
+    "kundepris": 2390,
+    "varenummer": null
+  },
+  "Lenovo Thunderbolt 4 dock": {
+    "kundepris": 3190,
+    "varenummer": null
+  },
+  "M.2 disk m/image": {
+    "kundepris": null,
+    "varenummer": null
+  }
 }
