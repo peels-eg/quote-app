@@ -1,34 +1,6 @@
 {
   "orders": [
     {
-      "id": "CS2701095",
-      "date": "2026-04-15",
-      "chain": "XL-Bygg",
-      "store": "Lade",
-      "status": "Bestilt",
-      "items": [
-        {
-          "name": "CT45",
-          "qty": 4,
-          "unitPrice": 14900,
-          "innpris": null,
-          "category": "PDA",
-          "isSetup": false
-        },
-        {
-          "name": "Oppsettspris",
-          "qty": 4,
-          "unitPrice": 1800,
-          "innpris": null,
-          "category": "PDA",
-          "isSetup": true
-        }
-      ],
-      "total": 66800,
-      "margin": null,
-      "confluenceSynced": true
-    },
-    {
       "id": "CS2498207",
       "date": "2026-04-15",
       "chain": "Byggtorget",
