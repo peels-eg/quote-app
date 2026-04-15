@@ -1,7 +1,9 @@
 {
   "chains": {
     "XL-Bygg": {
-      "stores": [],
+      "stores": [
+        "Lade"
+      ],
       "prices": {}
     },
     "Byggtorget": {
