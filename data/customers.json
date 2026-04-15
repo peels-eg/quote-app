@@ -4,7 +4,9 @@
       "stores": [
         "Lade"
       ],
-      "prices": {}
+      "prices": {
+        "Holster CT45": 0
+      }
     },
     "Byggtorget": {
       "stores": [
