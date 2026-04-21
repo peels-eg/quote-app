@@ -20,7 +20,9 @@
       }
     },
     "Optimera": {
-      "stores": [],
+      "stores": [
+        "Øygarden"
+      ],
       "prices": {}
     },
     "AS Drift": {
