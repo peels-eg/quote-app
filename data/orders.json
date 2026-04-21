@@ -1,6 +1,26 @@
 {
   "orders": [
     {
+      "id": "CS2718298",
+      "date": "2026-04-21",
+      "chain": "Optimera",
+      "store": "Ãygarden",
+      "status": "Gitt tilbud",
+      "items": [
+        {
+          "name": "Hylleetiketter",
+          "qty": 1,
+          "unitPrice": 167,
+          "innpris": null,
+          "category": "Etiketter",
+          "isSetup": false
+        }
+      ],
+      "total": 167,
+      "margin": null,
+      "confluenceSynced": false
+    },
+    {
       "id": "CS2701095",
       "date": "2026-04-15",
       "chain": "XL-Bygg",
