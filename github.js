@@ -31,7 +31,8 @@ const GitHub = (() => {
     if (!res.ok) throw new Error(`GitHub les feilet (${res.status}): ${path}`);
     const data = await res.json();
     shaCache[path] = data.sha;
-    return JSON.parse(atob(data.content.replace(/\n/g, '')));
+    const bytes = Uint8Array.from(atob(data.content.replace(/\n/g, '')), c => c.charCodeAt(0));
+    return JSON.parse(new TextDecoder('utf-8').decode(bytes));
   }
 
   async function writeFile(path, content, message) {
