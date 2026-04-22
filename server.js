@@ -35,8 +35,11 @@ http.createServer((req, res) => {
           host: cfParsed.hostname,
         },
       }, proxyRes => {
+        const ct = (proxyRes.headers['content-type'] || '');
+        const forcedCt = ct.includes('charset') ? ct : ct.replace(/(application\/json|text\/[a-z]+)/, '$1; charset=utf-8');
         res.writeHead(proxyRes.statusCode, {
           ...proxyRes.headers,
+          'content-type': forcedCt || 'application/json; charset=utf-8',
           'access-control-allow-origin': '*',
         });
         proxyRes.pipe(res);
