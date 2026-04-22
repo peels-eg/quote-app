@@ -4,7 +4,7 @@
 const Confluence = (() => {
   function cfg() {
     return {
-      baseUrl: localStorage.getItem('cf_url') || 'https://confluence.eg.dk',
+      baseUrl: '',  // empty = use proxy at same origin (/rest/api/...)
       token: localStorage.getItem('cf_token') || '',
       space: localStorage.getItem('cf_space') || '~peels@eg.no',
     };
