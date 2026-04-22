@@ -160,5 +160,32 @@ ${rows}
     return buildOrderRows(order);
   }
 
-  return { publishOrder, updateStatus, testConnection, generateHtml, findOrdrePage };
+  async function syncAll(orders) {
+    const { space } = cfg();
+    const content = buildFullPage(orders);
+    const page = await findOrdrePage();
+    if (page) {
+      await apiFetch(`/content/${page.id}`, {
+        method: 'PUT',
+        body: JSON.stringify({
+          version: { number: page.version.number + 1 },
+          title: 'Ordre',
+          type: 'page',
+          body: { storage: { value: content, representation: 'storage' } },
+        }),
+      });
+    } else {
+      await apiFetch('/content', {
+        method: 'POST',
+        body: JSON.stringify({
+          type: 'page',
+          title: 'Ordre',
+          space: { key: space },
+          body: { storage: { value: content, representation: 'storage' } },
+        }),
+      });
+    }
+  }
+
+  return { publishOrder, updateStatus, testConnection, generateHtml, findOrdrePage, syncAll };
 })();

@@ -706,6 +706,20 @@ const App = (() => {
 
     document.getElementById('btn-kopier').addEventListener('click', kopierKundemelding);
     document.getElementById('btn-publiser').addEventListener('click', publiserTilbud);
+    document.getElementById('btn-sync-cf').addEventListener('click', async () => {
+      const btn = document.getElementById('btn-sync-cf');
+      btn.disabled = true;
+      btn.textContent = 'Synker…';
+      try {
+        await Confluence.syncAll(state.orders);
+        toast('Confluence synkronisert med alle ' + state.orders.length + ' ordre', 'success');
+      } catch (e) {
+        toast('Synk feilet: ' + e.message, 'error');
+      } finally {
+        btn.disabled = false;
+        btn.textContent = 'Synk alle til Confluence';
+      }
+    });
     document.getElementById('btn-nullstill').addEventListener('click', () => {
       if (confirm('Nullstill handlekurven?')) { initCart(); renderCartView(); }
     });
