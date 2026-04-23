@@ -21,6 +21,7 @@
   <button data-view="produkter">Produkter</button>
   <button data-view="kunder">Kunder</button>
   <button data-view="priser">Priser</button>
+  <button data-view="oppsettspriser">Oppsettspriser</button>
 </nav>
 
 <main>
@@ -157,6 +158,32 @@
     </div>
   </div>
 
+
+  <!-- ════════════════════════════════════════════════════
+       OPPSETTSPRISER
+  ═══════════════════════════════════════════════════════ -->
+  <div id="view-oppsettspriser" class="view">
+    <div class="card">
+      <div class="card-title" style="display:flex;justify-content:space-between;align-items:center;">
+        Oppsettspriser per kategori
+        <button class="btn btn-primary btn-sm" onclick="App.addSetupPrice()">+ Legg til</button>
+      </div>
+      <p style="font-size:12px;color:var(--text-muted);margin-bottom:0.75rem">
+        Oppsettsprisen legges automatisk til i handlekurven når du legger til et produkt fra den aktuelle kategorien.
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>Kategori</th>
+            <th style="width:130px">Oppsettspris</th>
+            <th style="width:80px"></th>
+          </tr>
+        </thead>
+        <tbody id="oppsettspriser-tbody"></tbody>
+      </table>
+    </div>
+  </div>
+
 </main><!-- /main -->
 
 
@@ -241,3 +268,4 @@
 <script src="app.js"></script>
 </body>
 </html>
+
