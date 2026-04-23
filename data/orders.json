@@ -1,6 +1,26 @@
 {
   "orders": [
     {
+      "id": "CS2723386",
+      "date": "2026-04-23",
+      "chain": "AS Drift",
+      "store": "Utvik Byggevare",
+      "status": "Gitt tilbud",
+      "items": [
+        {
+          "name": "Batteri CT60",
+          "qty": 2,
+          "unitPrice": 1250,
+          "innpris": null,
+          "category": "PDA",
+          "isSetup": false
+        }
+      ],
+      "total": 2500,
+      "margin": null,
+      "confluenceSynced": true
+    },
+    {
       "id": "CS2718298",
       "date": "2026-04-21",
       "chain": "Optimera",
