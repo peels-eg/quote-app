@@ -31,22 +31,15 @@
     "Hylleetiketter",
     "Postetikett B25",
     "Reoletiketter",
-    "Fargebånd resin",
     "Fargebånd Wax/Resin"
   ],
   "Periferi": [
     "Signotec m/baklys",
     "Signotec u/baklys",
     "Quickscan",
-    "Integrert display",
     "Integrert kundedisplay",
     "Logitech MK540",
-    "DS2208 / Zebra strekkodeleser",
     "Skjermbeskytter Signotec"
   ],
-  "Strom": [
-    "Strømforsyning PP-9715",
-    "Lenovo Universal USB-C dock",
-    "Lenovo Thunderbolt 4 dock"
-  ]
+  "Strom": []
 }
