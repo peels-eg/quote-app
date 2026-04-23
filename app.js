@@ -18,7 +18,7 @@ const App = (() => {
     ghLoaded: false,  // whether data has been loaded from GitHub
   };
 
-  const SETUP_PRICES = { PDA: 1800, POS: 4950, Printer: 1490 };
+  let SETUP_PRICES = { PDA: 1800, POS: 4950, Printer: 1490 };
   const STATUSES = ['Gitt tilbud', 'Godskjent tilbud', 'Bestilt'];
   const CAT_LABELS = { PDA: 'PDA', POS: 'POS / Kasse', Printer: 'Printer', Etiketter: 'Etiketter', Periferi: 'Periferi', Strom: 'Strøm' };
 
@@ -54,6 +54,7 @@ const App = (() => {
     if (name === 'produkter') renderProdukter();
     if (name === 'kunder') renderKunder();
     if (name === 'priser') renderPriser();
+    if (name === 'oppsettspriser') renderOppsettspriser();
   }
 
   // ── Data loading ─────────────────────────────────────────────────────
@@ -66,11 +67,12 @@ const App = (() => {
       return;
     }
     try {
-      [state.products, state.prices, state.customers, state.orders] = await Promise.all([
+      [state.products, state.prices, state.customers, state.orders, SETUP_PRICES] = await Promise.all([
         GitHub.readFile('data/products.json'),
         GitHub.readFile('data/prices.json'),
         GitHub.readFile('data/customers.json'),
         GitHub.readFile('data/orders.json').then(d => d.orders || []),
+        GitHub.readFile('data/setup_prices.json').catch(() => ({ PDA: 1800, POS: 4950, Printer: 1490 })),
       ]);
       state.ghLoaded = true;
     } catch (e) {
@@ -83,16 +85,18 @@ const App = (() => {
 
   async function loadLocalData() {
     try {
-      const [p, pr, c, o] = await Promise.all([
+      const [p, pr, c, o, sp] = await Promise.all([
         fetch('data/products.json').then(r => r.json()),
         fetch('data/prices.json').then(r => r.json()),
         fetch('data/customers.json').then(r => r.json()),
         fetch('data/orders.json').then(r => r.json()),
+        fetch('data/setup_prices.json').then(r => r.json()).catch(() => ({ PDA: 1800, POS: 4950, Printer: 1490 })),
       ]);
       state.products = p;
       state.prices = pr;
       state.customers = c;
       state.orders = o.orders || [];
+      SETUP_PRICES = sp;
     } catch (e) {
       toast('Kunne ikke laste lokale data: ' + e.message, 'error');
     }
@@ -151,12 +155,13 @@ const App = (() => {
   }
 
   function removeFromCart(id) {
-    state.cart.items = state.cart.items.filter(i => i.id !== id);
+    const numId = parseFloat(id);
+    state.cart.items = state.cart.items.filter(i => i.id !== numId);
     renderCartItems();
   }
 
   function updateCartItem(id, field, value) {
-    const item = state.cart.items.find(i => i.id === id);
+    const item = state.cart.items.find(i => i.id === parseFloat(id));
     if (!item) return;
     if (field === 'qty') {
       const qty = Math.max(1, parseInt(value) || 1);
@@ -586,6 +591,46 @@ const App = (() => {
     saveFile('data/prices.json', state.prices, `oppdater pris ${name}`).catch(e => toast(e.message, 'error'));
   }
 
+  // ── Oppsettspriser view ──────────────────────────────────────────────
+  function renderOppsettspriser() {
+    const tbody = document.getElementById('oppsettspriser-tbody');
+    tbody.innerHTML = Object.entries(SETUP_PRICES).map(([cat, price]) => `
+<tr>
+  <td>${escHtml(cat)}</td>
+  <td><input type="number" class="inline" style="width:110px" value="${price}"
+      onchange="App.updateSetupPrice('${escHtml(cat)}', this.value)"></td>
+  <td class="text-right">
+    <button class="btn btn-ghost btn-sm btn-danger" onclick="App.deleteSetupPrice('${escHtml(cat)}')">Slett</button>
+  </td>
+</tr>`).join('');
+  }
+
+  function addSetupPrice() {
+    const cat = prompt('Kategorinavn (f.eks. PDA, POS, Printer):');
+    if (!cat?.trim()) return;
+    if (SETUP_PRICES[cat.trim()] != null) { toast('Kategori finnes allerede', 'error'); return; }
+    const priceStr = prompt(`Oppsettspris for "${cat.trim()}":`);
+    const price = parseFloat(priceStr);
+    if (isNaN(price)) { toast('Ugyldig pris', 'error'); return; }
+    SETUP_PRICES[cat.trim()] = price;
+    saveFile('data/setup_prices.json', SETUP_PRICES, `legg til oppsettspris ${cat.trim()}`).catch(e => toast(e.message, 'error'));
+    renderOppsettspriser();
+    toast('Oppsettspris lagt til', 'success');
+  }
+
+  function updateSetupPrice(cat, value) {
+    SETUP_PRICES[cat] = parseFloat(value) || 0;
+    saveFile('data/setup_prices.json', SETUP_PRICES, `oppdater oppsettspris ${cat}`).catch(e => toast(e.message, 'error'));
+  }
+
+  function deleteSetupPrice(cat) {
+    if (!confirm(`Slett oppsettspris for "${cat}"?`)) return;
+    delete SETUP_PRICES[cat];
+    saveFile('data/setup_prices.json', SETUP_PRICES, `slett oppsettspris ${cat}`).catch(e => toast(e.message, 'error'));
+    renderOppsettspriser();
+    toast('Oppsettspris slettet', 'success');
+  }
+
   // ── Settings modal ───────────────────────────────────────────────────
   function openSettings() {
     document.getElementById('set-gh-token').value = localStorage.getItem('gh_token') || '';
@@ -765,8 +810,12 @@ const App = (() => {
     updateChainPrice,
     removeChainPrice,
     updatePrice,
+    addSetupPrice,
+    updateSetupPrice,
+    deleteSetupPrice,
     openSettings,
   };
 })();
 
 document.addEventListener('DOMContentLoaded', App.init);
+
