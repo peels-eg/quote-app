@@ -136,7 +136,8 @@
   },
   "Quickscan": {
     "kundepris": 2990,
-    "varenummer": null
+    "varenummer": null,
+    "noSetup": true
   },
   "Integrert kundedisplay": {
     "kundepris": null,
