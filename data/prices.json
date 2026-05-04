@@ -59,7 +59,8 @@
   },
   "Protective Boot CT45": {
     "kundepris": 360,
-    "varenummer": null
+    "varenummer": null,
+    "noSetup": true
   },
   "NY Fec, Win11, uten periferi": {
     "kundepris": 19819,
