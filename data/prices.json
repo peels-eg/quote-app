@@ -13,7 +13,8 @@
   },
   "Batteri CT45": {
     "kundepris": 990,
-    "varenummer": null
+    "varenummer": null,
+    "noSetup": true
   },
   "Batteri CT60": {
     "kundepris": 1250,
