@@ -120,7 +120,8 @@
   },
   "FargebÃÂÃÂ¥nd resin": {
     "kundepris": 1320,
-    "varenummer": null
+    "varenummer": null,
+    "noSetup": true
   },
   "FargebÃÂÃÂ¥nd Wax/Resin": {
     "kundepris": 690,
