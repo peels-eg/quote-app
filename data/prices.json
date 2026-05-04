@@ -144,7 +144,8 @@
   },
   "Logitech MK540": {
     "kundepris": null,
-    "varenummer": null
+    "varenummer": null,
+    "noSetup": true
   },
   "Skjermbeskytter Signotec": {
     "kundepris": 499,
