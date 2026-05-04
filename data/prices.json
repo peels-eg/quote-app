@@ -34,7 +34,8 @@
   },
   "Holster CT60": {
     "kundepris": 690,
-    "varenummer": null
+    "varenummer": null,
+    "noSetup": true
   },
   "BÃÂÃÂ¦reveske": {
     "kundepris": 690,
