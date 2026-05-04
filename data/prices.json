@@ -140,7 +140,8 @@
   },
   "Integrert kundedisplay": {
     "kundepris": null,
-    "varenummer": null
+    "varenummer": null,
+    "noSetup": true
   },
   "Logitech MK540": {
     "kundepris": null,
