@@ -18,7 +18,8 @@
   },
   "Batteri CT60": {
     "kundepris": 1250,
-    "varenummer": "823"
+    "varenummer": "823",
+    "noSetup": true
   },
   "Stylus Penn CT45": {
     "kundepris": 190,
