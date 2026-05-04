@@ -152,7 +152,8 @@
   },
   "StrÃÂÃÂ¸mforsyning PP-9715": {
     "kundepris": 1049,
-    "varenummer": null
+    "varenummer": null,
+    "noSetup": true
   },
   "CT45": {
     "kundepris": 14900,
