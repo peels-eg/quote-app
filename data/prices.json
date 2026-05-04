@@ -132,7 +132,8 @@
   },
   "Signotec u/baklys": {
     "kundepris": 2850,
-    "varenummer": null
+    "varenummer": null,
+    "noSetup": true
   },
   "Quickscan": {
     "kundepris": 2990,
