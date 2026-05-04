@@ -128,7 +128,8 @@
   },
   "Signotec m/baklys": {
     "kundepris": 3600,
-    "varenummer": null
+    "varenummer": null,
+    "noSetup": true
   },
   "Signotec u/baklys": {
     "kundepris": 2850,
