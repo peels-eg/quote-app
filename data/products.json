@@ -10,8 +10,7 @@
     "Holster CT60",
     "4dock lader CT45",
     "4dock lader CT60",
-    "Singeldock CT45",
-    "Protective Boot CT45"
+    "Singeldock CT45"
   ],
   "POS": [
     "NY Fec, Win11, uten periferi",
@@ -19,7 +18,6 @@
     "NY Fec, Win11 inkl. periferi, u/signotec"
   ],
   "Printer": [
-    "PC42E",
     "Honeywell PC42E",
     "HP LaserJet Pro 4002dn",
     "HP Color LaserJet Pro MFP 4302dw",
