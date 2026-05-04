@@ -29,7 +29,8 @@
   },
   "Holster CT45": {
     "kundepris": 690,
-    "varenummer": null
+    "varenummer": null,
+    "noSetup": true
   },
   "Holster CT60": {
     "kundepris": 690,
