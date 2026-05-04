@@ -125,7 +125,8 @@
   },
   "FargebÃÂÃÂ¥nd Wax/Resin": {
     "kundepris": 690,
-    "varenummer": null
+    "varenummer": null,
+    "noSetup": true
   },
   "Signotec m/baklys": {
     "kundepris": 3600,
