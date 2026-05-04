@@ -44,7 +44,8 @@
   },
   "4dock lader CT45": {
     "kundepris": 4800,
-    "varenummer": null
+    "varenummer": null,
+    "noSetup": true
   },
   "4dock lader CT60": {
     "kundepris": 4200,
