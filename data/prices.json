@@ -39,7 +39,8 @@
   },
   "BÃÂÃÂ¦reveske": {
     "kundepris": 690,
-    "varenummer": null
+    "varenummer": null,
+    "noSetup": true
   },
   "4dock lader CT45": {
     "kundepris": 4800,
