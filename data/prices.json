@@ -24,7 +24,8 @@
   "Stylus Penn CT45": {
     "kundepris": 190,
     "varenummer": null,
-    "innpris": 122
+    "innpris": 122,
+    "noSetup": true
   },
   "Holster CT45": {
     "kundepris": 690,
